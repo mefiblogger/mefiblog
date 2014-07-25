@@ -1,0 +1,22 @@
+Mefi\BlogBundle\Entity\Category:
+  type: entity
+  table: category
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    title:
+      type: string
+      length: 255
+      notnull: true
+      unique: true
+    slug:
+      type: string
+      length: 255
+      notnull: true
+      unique: true
+  oneToMany:
+    posts:
+      targetEntity: Post
+      mappedBy: category

@@ -1,0 +1,29 @@
+Mefi\BlogBundle\Entity\Post:
+  type: entity
+  table: post
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    category_id  : { type: integer, notnull: true }
+    is_visible   : { type: boolean }
+    is_open      : { type: boolean }
+    created_by   : { type: string(64) }
+    title        : { type: string(255), notnull: true }
+    lead         : { type: string(4000), notnull: true }
+    description  : { type: string(4000) }
+    published_at : { type: datetime }
+    created_at   : { type: datetime }
+    updated_at   : { type: datetime }
+    slug         : { type: string(255), notnull: true }
+  manyToOne:
+    category:
+      targetEntity: Category
+      inversedBy: posts
+      joinColumn:
+        name: category_id
+        referencedColumnName: id
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue ]
+    preUpdate: [ setUpdatedAtValue ]

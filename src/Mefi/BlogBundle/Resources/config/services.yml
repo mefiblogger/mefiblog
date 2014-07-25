@@ -1,0 +1,7 @@
+parameters:
+#    mefi_blog.example.class: Mefi\BlogBundle\Example
+
+services:
+#    mefi_blog.example:
+#        class: %mefi_blog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

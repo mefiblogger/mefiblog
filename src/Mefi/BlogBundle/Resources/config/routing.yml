@@ -1,0 +1,3 @@
+mefi_blog_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MefiBlogBundle:Default:index }

@@ -1,0 +1,19 @@
+Mefi\BlogBundle\Entity\Page:
+  type: entity
+  table: page
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  actAs:
+    Timestampable: ~
+    Sluggable:
+      fields: [title]
+  fields:
+    is_visible   : { type: boolean }
+    created_by   : { type: string(64) }
+    title        : { type: string(255), notnull: true }
+    description  : { type: string(4000) }
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue ]
+    preUpdate: [ setUpdatedAtValue ]

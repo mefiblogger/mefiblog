@@ -1,0 +1,4 @@
+mefi_blog:
+    resource: "@MefiBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
