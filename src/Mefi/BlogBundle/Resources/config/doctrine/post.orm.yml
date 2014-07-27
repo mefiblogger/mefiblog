@@ -1,5 +1,6 @@
 Mefi\BlogBundle\Entity\Post:
   type: entity
+  repositoryClass: Mefi\BlogBundle\Entity\PostRepository
   table: post
   id:
     id:
