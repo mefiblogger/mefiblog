@@ -1,3 +1,7 @@
+startpage:
+    path:      /
+    defaults:  { _controller: MefiBlogBundle:Post:startpage }
+
 mefi_blog:
     resource: "@MefiBlogBundle/Resources/config/routing.yml"
     prefix:   /
