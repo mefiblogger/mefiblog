@@ -1,3 +1,9 @@
+mefi_blog_category_slug:
+    path:     /tema/{categoryId}/{slug}/
+    defaults: { _controller: MefiBlogBundle:Post:category }
+    requirements:
+      categoryId: \d+
+
 mefi_blog_category:
     path:     /tema/{categoryId}{trailingSlash}
     defaults: { _controller: MefiBlogBundle:Post:category }
@@ -7,12 +13,18 @@ mefi_blog_category:
 
 mefi_blog_archive:
     path:     /regi/{date}{trailingSlash}
-    defaults: { _controller: MefiBlogBundle:Post:archive}
+    defaults: { _controller: MefiBlogBundle:Post:archive }
     requirements:
       date: \d+
       trailingSlash: ".*"
 
-mefi_blog_post:
+mefi_blog_post_slug:
+    path:     /muti/{id}/{slug}/
+    defaults: { _controller: MefiBlogBundle:Post:post}
+    requirements:
+      id: \d+
+
+mefi_blog_post_id:
     path:     /muti/{id}{trailingSlash}
     defaults: { _controller: MefiBlogBundle:Post:post}
     requirements:
