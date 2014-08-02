@@ -3,6 +3,7 @@
 namespace Mefi\BlogBundle\Controller;
 
 use Doctrine\ORM\NoResultException;
+use Mefi\BlogBundle\Helper\HungarianHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class PostController extends Controller
@@ -20,6 +21,19 @@ class PostController extends Controller
     }
 
     /**
+     * Shortcut for templates.
+     *
+     * @param string $template
+     * @param string $namespace
+     *
+     * @return string MefiblogBundle:$namespace$template.html.twig
+     */
+    protected function getTemplate($template, $namespace = 'Post')
+    {
+        return 'MefiBlogBundle:' . $namespace . ':' . $template . '.html.twig';
+    }
+
+    /**
      * Listing the last 25 posts.
      *
      * @return \Symfony\Component\HttpFoundation\Response
@@ -28,7 +42,7 @@ class PostController extends Controller
     {
         $posts = $this->getRepository()->findAllVisibleAndPublshed();
 
-        return $this->render(self::TEMPLATE_PREFIX . 'startpage.html.twig', array('posts' => $posts));
+        return $this->render($this->getTemplate('startpage', 'Default'), array('posts' => $posts));
     }
 
     /**
@@ -47,7 +61,7 @@ class PostController extends Controller
         try {
             $post = $this->getRepository()->findOneVisibleAndPublshedById($id);
 
-            return $this->render(self::TEMPLATE_PREFIX . 'post.html.twig', array('post' => $post));
+            return $this->render($this->getTemplate('post'), array('post' => $post));
         }
         catch (NoResultException $e) {
             throw $this->createNotFoundException('A keresett bejegyzés nem található.');
@@ -74,7 +88,7 @@ class PostController extends Controller
         if ($category) {
             $posts = $this->getRepository()->findAllVisibleAndPublshedByCategory($categoryId);
 
-            return $this->render(self::TEMPLATE_PREFIX . 'startpage.html.twig', array('posts' => $posts));
+            return $this->render($this->getTemplate('category'), array('posts' => $posts, 'category' => $category));
         }
 
         throw $this->createNotFoundException('A keresett téma nem található.');
@@ -98,7 +112,7 @@ class PostController extends Controller
             $posts = $this->getRepository()->findAllVisibleAndPublshedByYearAndMonth($year, $month);
 
             if ($posts) {
-                return $this->render(self::TEMPLATE_PREFIX . 'startpage.html.twig', array('posts' => $posts));
+                return $this->render($this->getTemplate('archive'), array('posts' => $posts));
             }
         }
 
