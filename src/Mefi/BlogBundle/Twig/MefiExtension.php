@@ -2,12 +2,16 @@
 
 namespace Mefi\BlogBundle\Twig;
 
+use Mefi\BlogBundle\Helper\HungarianHelper;
+
 class MefiExtension extends \Twig_Extension
 {
     public function getFilters()
     {
         return array(
             new \Twig_SimpleFilter('hundate', array($this, 'hundateFilter')),
+            new \Twig_SimpleFilter('hundate_collection', array($this, 'hundateCollectionFilter')),
+            new \Twig_SimpleFilter('hunarticle', array($this, 'hunarticleFilter'))
         );
     }
 
@@ -16,7 +20,7 @@ class MefiExtension extends \Twig_Extension
      *
      * If $month given, returns the given month's name.
      *
-     * @param   int           $month  (1-12)
+     * @param int $month  (1-12)
      *
      * @throws Exception
      *
@@ -24,30 +28,7 @@ class MefiExtension extends \Twig_Extension
      */
     public function getHungarianMonths($month = null)
     {
-        $a = array(
-            1 => 'január',
-            2 => 'február',
-            3 => 'március',
-            4 => 'április',
-            5 => 'május',
-            6 => 'június',
-            7 => 'július',
-            8 => 'augusztus',
-            9 => 'szeptember',
-            10 => 'október',
-            11 => 'november',
-            12 => 'december'
-        );
-
-        if (!$month) {
-            return $a;
-        }
-
-        if (!isset($a[$month])) {
-            throw new Exception ('Invalid month.');
-        }
-
-        return $a[$month];
+        return HungarianHelper::getHungarianMonths($month);
     }
 
     /**
@@ -94,6 +75,40 @@ class MefiExtension extends \Twig_Extension
         $text .= ', ' . date('H:i:s', $timestamp) . '-kor';
 
         return $text;
+    }
+
+    /**
+     * Formats a DateTime object to the following format:
+     *
+     * 2014. január
+     *
+     * @param \DateTime $datetime
+     *
+     * @return string
+     */
+    public function hundateCollectionFilter(\DateTime $datetime)
+    {
+        $timestamp = $datetime->getTimestamp();
+
+        $year = date('Y. ', $timestamp);
+        $month = $this->getHungarianMonths(date('n', $timestamp));
+
+        return $year . $month;
+    }
+
+    /**
+     * Returns the Hungarian "a" or "az" article
+     *
+     * @see HungarianHelper::
+     *
+     * @param string $text
+     * @param boolean $uppercaseFirst
+     *
+     * @return string
+     */
+    public function hunarticleFilter($text, $uppercaseFirst = false)
+    {
+        return HungarianHelper::getHungarianArticle($text, $uppercaseFirst);
     }
 
     public function getName()
