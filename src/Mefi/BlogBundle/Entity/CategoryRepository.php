@@ -11,7 +11,7 @@ class CategoryRepository extends EntityRepository
 {
 
     /**
-     * Get all published and visible posts.
+     * Get all categories with post count.
      *
      * @return array
      */
