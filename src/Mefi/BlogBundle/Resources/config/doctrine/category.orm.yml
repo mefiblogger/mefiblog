@@ -1,5 +1,6 @@
 Mefi\BlogBundle\Entity\Category:
   type: entity
+  repositoryClass: Mefi\BlogBundle\Entity\CategoryRepository
   table: category
   id:
     id:
