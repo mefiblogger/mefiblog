@@ -24,6 +24,7 @@ class PostController extends Controller
      * Shortcut for templates.
      *
      * @param string $template
+     * @param $template
      * @param string $namespace
      *
      * @return string MefiblogBundle:$namespace$template.html.twig
@@ -66,6 +67,19 @@ class PostController extends Controller
         catch (NoResultException $e) {
             throw $this->createNotFoundException('A keresett bejegyzés nem található.');
         }
+    }
+
+
+    /**
+     * Listing all categories.
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function categoryCollectionAction()
+    {
+        $categories = $this->getDoctrine()->getRepository('MefiBlogBundle:Category')->findAllForCategoryListing();
+
+        return $this->render($this->getTemplate('categoryCollection', 'Post'), array('categories' => $categories));
     }
 
     /**

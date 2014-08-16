@@ -1,3 +1,9 @@
+mefi_blog_category_collection:
+    path:     /temak{trailingSlash}
+    defaults: { _controller: MefiBlogBundle:Post:categoryCollection }
+    requirements:
+      trailingSlash: ".*"
+
 mefi_blog_category_slug:
     path:     /tema/{categoryId}/{slug}/
     defaults: { _controller: MefiBlogBundle:Post:category }
