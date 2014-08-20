@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}mefiblog{% endblock %}</title>
+
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300Italic,400,600,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+
+        {% block stylesheets %}
+            {% stylesheets 'bundles/mefiblog/css/*' filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+
+        <link rel="shortcut icon" href="{{ asset('bundles/mefiblog/images/favicon.gif') }}" type="image/gif" title="favicon rulezz" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://mefiblogger.disqus.com/count.js" async="true"></script>
+
+        {% block javascripts %}
+            {% javascripts 'bundles/mefiblog/js/*' %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+
+    </head>
+    <body>
+        <div id="container">
+            <header id="main-header" class="scroll-waypoint">
+                <h1>
+                    <a href="{{ path('startpage') }}" id="logo">
+                        <span>mefiblog</span>
+                    </a>
+                </h1>
+            </header>
+
+            <div id="search">
+                <input id="search-field" placeholder="mit keresel?">
+            </div>
+
+            {% block body %}{% endblock %}
+
+            <footer>
+                <span class="large"><b>v4</b> | írta és rendezte: Nádai Gábor, aki Mefi</span>
+                <span class="small"><b>v4</b> | &copy; Mefi &mdash; </span>
+                <ul>
+                    <li>
+                        <a href="/temak/">témák</a>
+                    </li>
+                    <li>
+                        <a href="/archivum/">archívum</a>
+                    </li>
+                    <li>
+                        <a href="/szocial/">szociál</a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+    </body>
+</html>

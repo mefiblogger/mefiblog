@@ -1,0 +1,481 @@
+body, html {
+    font-family: "Open Sans", sans-serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div#container.smaller {
+    padding-top: 382px;
+}
+
+a {
+    color: #00a6df;
+    text-decoration: none;
+}
+
+h4 {
+    color: #b0b0b0;
+    margin: 50px 0;
+    font-family: "Myriad Pro", sans-serif;
+    font-size: 2em;
+    font-style: italic;
+    font-weight: 200;
+    text-align: center;
+}
+
+hr {
+    border: 0px;
+    border-top: 2px solid #f7f7f7;
+    height: 0px;
+    margin: 40px auto;
+    width: 740px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+b {
+    font-weight: 600;
+}
+
+strong {
+    font-weight: 700;
+}
+
+ins {
+    border-top: 2px solid #f9e1b8;
+    border-bottom: 2px solid #f9e1b8;
+    background-color: #fff7e9;
+    color: #b8713d;
+    display: block;
+    font-style: italic;
+    font-size: 1.2em;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+table {
+    border-top: 1px solid #ced9e1;
+    border-right: 1px solid #ced9e1;
+    margin: 0 0 10px 0;
+    width:100%;
+}
+table td {
+    color: #273646;
+}
+table td.left, table th {
+    background-color: #f1f5fa;
+    color: #54738a;
+    font-weight: 600;
+    text-align: right;
+    text-transform: uppercase;
+    width: 20%;
+}
+table tr {
+    margin: 0;
+    padding: 0;
+}
+table tr td {
+    border-bottom: 1px solid #ced9e1;
+    border-left: 1px solid #ced9e1;
+    padding: 5px;
+    margin: 0;
+}
+
+.highlight {
+    background-color: #fffbcc;
+    color: #373a36;
+}
+
+q:before {
+    content: "\201E";
+}
+
+q:after {
+    content: "\201D";
+}
+
+#search {
+    background: #e8e8e8 url(/bundles/mefiblog/images/search.png) no-repeat 50px 8px;
+    cursor: pointer;
+    height: 50px;
+    width: 100px;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    border-radius: 30px;
+    position: fixed;
+    left: -45px;
+    top: 450px;
+}
+
+#search input {
+    width: 0;
+}
+
+#search.open {
+    background-position: 205px 8px;
+    -webkit-transition:background-position 0.5s;
+    -moz-transition:background-position 0.5s;
+    -ms-transition:background-position 0.5s;
+    -o-transition:background-position 0.5s;
+    transition:background-position 0.5s;
+    width: 250px;
+    -webkit-transition:width 0.5s;
+    -moz-transition:width 0.5s;
+    -ms-transition:width 0.5s;
+    -o-transition:width 0.5s;
+    transition:width 0.5s;
+}
+
+#search.open input {
+    border: 1px solid #bababa;
+    border-radius: 3px;
+    background-color: #fdfdfd;
+    color: #696969;
+    display: block;
+    font-size: 0.8em;
+    margin: 15px 0 0 56px;
+    outline: none;
+    width: 145px;
+    -webkit-transition:width 0.5s;
+    -moz-transition:width 0.5s;
+    -ms-transition:width 0.5s;
+    -o-transition:width 0.5s;
+    transition:width 0.5s;
+}
+
+header {
+    background: #525252 url(/bundles/mefiblog/images/header_1.png) no-repeat center center;
+    border-bottom: 5px solid #f0f0f0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-box-shadow: 0px -2px 21px 4px rgba(176,176,176,0.55);
+    -moz-box-shadow: 0px -2px 21px 4px rgba(176,176,176,0.55);
+    box-shadow: 0px -2px 21px 4px rgba(176,176,176,0.55);
+    height: 380px;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    width: 100%;
+}
+
+header.smaller {
+    background-position: 0 -150px;
+    -webkit-transition:background-position 1.5s;
+    -moz-transition:background-position 1.5s;
+    -ms-transition:background-position 1.5s;
+    -o-transition:background-position 1.5s;
+    transition:background-position 1.5s;
+    height: 140px;
+    position: fixed;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h1 a {
+    background: transparent url(/bundles/mefiblog/images/header_logo.png) no-repeat center;
+    display: block;
+    margin: 0 auto;
+    height: 150px;
+    padding: 200px 0 0 0;
+    width: 417px;
+    -webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -ms-transition: height 0.5s;
+    -o-transition: height 0.5s;
+    transition: height 0.5s;
+}
+
+header.smaller h1 a {
+    padding-top: 30px;
+    height: 100px;
+    width: 308px;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    -webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -ms-transition: height 0.5s;
+    -o-transition: height 0.5s;
+    transition: height 0.5s;
+}
+
+header h1 a span {
+    display: none;
+}
+
+article h2 {
+    font-family: "Myriad Pro", "Trebuchet Ms", sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 15px 0 0 0;
+    text-align: center;
+}
+
+article nav {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 200;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+article nav a {
+    font-weight: 400;
+    text-decoration: none;
+}
+
+section:last {
+    margin-bottom: 200px;
+}
+
+section.photos {
+    background-color: #373a36;
+    text-align: center;
+    padding: 45px 0;
+    margin: 0 0 45px 0;
+}
+
+article.photo h2 {
+    color: #fff;
+}
+
+article.photo nav {
+    color: #e2e2e2;
+}
+
+article.photo nav a {
+    color: #fff;
+}
+
+article.photo p {
+    padding-top: 40px;
+}
+
+article.photo img {
+    max-width: 785px;
+    height: auto;
+}
+
+section.posts {
+    min-width: 480px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+article.post h2 {
+    color: #00a6df;
+}
+
+article.post h2 a:hover {
+    background-color: #00a6df;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 5px 0 5px;
+}
+
+article.post h3 {
+    color: #696a6a;
+    font-size: 2em;
+}
+
+article.post nav {
+    color: #8cae44;
+}
+
+article.post nav b {
+    font-weight: 400;
+}
+
+article.post nav a {
+    color: #8cae44;
+}
+
+article.post nav a:hover {
+    background-color: #8cae44;
+    color: #fff;
+    text-decoration: none;
+}
+
+article.post blockquote {
+    background-color: #f5f5f5;
+    border-left: 3px solid #c4c4c4;
+    color: #63656a;
+    margin: 0;
+    padding: 5px 25px;
+}
+
+article.post blockquote.highlight {
+    background-color: #fff;
+    border: none;
+    color: #8a8d8e;
+    font-size: 1.5em;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+}
+
+article.post p {
+    font-family: "Open Sans", Georgia, sans-serif;
+    font-size: 1.2em;
+}
+
+article.post p img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+}
+
+section.comments {
+    min-width: 480px;
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    padding: 0 15px;
+}
+
+section.timeline {
+    background: #fff url(/bundles/mefiblog/images/timeline_background.png) repeat-y center;
+    min-width: 480px;
+    max-width: 1000px;
+    margin: 30px auto 0 auto;
+    padding: 100px 15px;
+}
+
+section.timeline article {
+    color: #232323;
+    display: block;
+    height: 400px;
+    width: 400px;
+}
+
+section.timeline article p {
+    font-style: italic;
+}
+
+section.timeline article h2 {
+    color: #00a6df;
+    font-size: 2.5em;
+    margin-top: -14px;
+    text-align: left;
+}
+
+section.timeline article h2:first-letter {
+    text-transform: uppercase;
+}
+
+section.timeline article a {
+    color: #8cae44;
+    font-style: normal;
+    text-decoration: underline;
+}
+
+section.timeline article a:hover {
+    color: #00a6df;
+}
+
+section.timeline article.left {
+    background: transparent url(/bundles/mefiblog/images/timeline_left.png) no-repeat right 12px;
+    margin-left: 103px;
+}
+
+section.timeline article.left p {
+    margin: 10px 0 15px 0;
+    padding-right: 25px;
+}
+
+section.timeline article.right {
+    background: transparent url(/bundles/mefiblog/images/timeline_right.png) no-repeat 0 -3px;
+    float: right;
+    margin-top: -200px;
+    margin-right: 32px;
+    padding-left: 125px;
+    width: 345px;
+}
+
+footer {
+    background: #8cae44 url(/bundles/mefiblog/images/footer_logo.png) no-repeat center;
+    bottom: 0;
+    color: #fff;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.9em;
+    font-weight: 200;
+    height: 15px;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 15px 0 15px 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+footer span {
+    margin-left: -30px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-shadow: 0 0 1px #fff;
+    text-decoration: none;
+}
+
+footer ul {
+    display: inline;
+    list-style-type: none;
+    margin: 0 0 0 60px;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    padding-right: 20px;
+    text-transform: uppercase;
+}
+
+footer span.small {
+    display: none;
+}
+
+@media all and (max-width: 1000px) {
+    header.smaller {
+        background-position: 0 0;
+    }
+
+    body {
+        font-size: 220%;
+    }
+
+    footer {
+        background-position: left;
+        text-align: right;
+    }
+
+    footer span.small {
+        display: inline;
+    }
+
+    footer span.large {
+        display: none;
+    }
+
+    footer span {
+        margin: 0;
+    }
+
+    footer ul {
+        margin: 0;
+    }
+}

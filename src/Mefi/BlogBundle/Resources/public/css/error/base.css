@@ -1,0 +1,51 @@
+/*
+ *
+ * mefiblog hibaüzenet CSS-fájl
+ * (c) 2009 Mefi - http://mefi.be/
+ *
+ */
+
+body{
+    background-color	: #8cae44;
+    color				: #fff;
+    font-family			: Tahoma;
+    font-size			: 100%;
+}
+
+h1{
+    font-family			: Trebuchet MS;
+}
+
+hr{
+    height				: 0px;
+    border				: 0px;
+    border-top			: 1px dotted #fff;
+}
+
+div#container{
+    margin				: 6% auto 0 auto;
+    width				: 1040px;
+}
+
+div#logo{
+    width				: 440px;
+    height				: 440px;
+    background-image	: url("/bundles/mefiblog/images/error.gif");
+    float				: left;
+}
+
+div#logo a{
+    display				: block;
+    width				: 100%;
+    height				: 100%;
+}
+
+div#logo a span{
+    display				: none;
+}
+
+div#content{
+    margin				: 120px 0 0 0;
+    width				: 600px;
+    float				: left;
+}

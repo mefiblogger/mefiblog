@@ -1,0 +1,18 @@
+{% extends 'MefiBlogBundle:Default:base.html.twig' %}
+
+{% block title %}{{ post.title }} a mefiblogon{% endblock %}
+
+{% block body %}
+    <section class="posts" id="bejegyzesek">
+        {{ include('MefiBlogBundle:Post:content.html.twig', { 'post': post }) }}
+    </section>
+
+    <section class="comments" id="kommentek">
+        {% if post.isOpen %}
+            {{ include('MefiBlogBundle:Post:disqus.html.twig', { 'post': post }) }}
+        {% else %}
+            <h4>Ehhez a bejegyzéshez sajna nem szólhatsz hozzá.</h4>
+            <hr />
+        {% endif %}
+    </section>
+{% endblock %}

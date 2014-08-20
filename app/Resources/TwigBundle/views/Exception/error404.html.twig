@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- mindent a szemnek, semmit a kéznek ;] - (c) Mefi 2009 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+    <meta http-equiv="Content-Language" content="Hungarian" />
+
+    <meta name="author" content="mefi" />
+    <meta name="copyright" content="mefi (c) 2006" />
+    <meta name="keywords" content="blog, haverock, mefi, opera, rss, php, mysql, css, film, zene, könyv, v2, blogmotor" />
+    <meta name="description" content="mefiblog - internet, könyv, mozi, játék, bicaj, kockulás, sorozat, webfejlesztés, programozás és miegymás, egy tizenkilenc éves ifjú kalandor lelkének kivetüléseiként tálalva." />
+    <meta name="revisit-after" content="1 days" />
+
+    {% block stylesheets %}
+        {% stylesheets 'bundles/mefiblog/css/error/*' filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
+
+    <link rel="shortcut icon" href="http://mefi.be/img/favicon.gif" type="image/gif" title="favicon rulezz" />
+
+    <link rel="home" href="http://mefi.be/" />
+    <link rel="search" href="http://mefi.be/szimat/" title="Keres&#337;" />
+    <link rel="index" href="http://mefi.be/index.php" />
+    <link rel="contents" href="http://mefi.be/regiek/" />
+    <link rel="stat" href="http://mefi.be/stat/" />
+    <link rel="info" href="http://mefi.be/oldal/info" />
+    <link rel="help" href="http://mefi.be/oldal/info" />
+</head>
+
+<body>
+
+<div id="container">
+    <div id="logo"><a href="http://mefi.be/" title="mefiblog főoldal"><span>mefiblog főoldal</span></a></div>
+
+    <div id="content">
+        <h1>404 üveg sör lóg a falon!</h1>
+        <p id="message">Az a fájl vagy akármi amit keresel nem található. Lehetséges hogy törölve lett vagy csak rossz helyen jársz, de az is előfordulhat hogy ideiglenesen nem elérhető.</p>
+        <hr />
+        <p><small>A nagy szomorú fejre kattintva visszatérhetsz a főoldalra.</small></p>
+    </div>
+</div>
+
+<!-- statisztika, miegymás -->
+<script language="javascipt" type="text/javascript" src="http://mefi.be/statgep.js"></script>
+<noscript><img alt="statgép" src="http://statgep.hu/stat/mefi/log.sx" style="display:none;" /></noscript>
+<!-- eddig -->
+
+</body>
+</html>

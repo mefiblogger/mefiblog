@@ -1,0 +1,26 @@
+{% extends 'MefiBlogBundle:Default:base.html.twig' %}
+
+{% block title %}
+    mefiblog \\
+    {{ random([
+        'a hóhér a pályafutását gyerekfejjel kezdte',
+        'ez zongora, ez nagyon szép',
+        'a vitatkozó parasztok a falu végén dűlőre jutottak',
+        'mert Mefi csak egy van',
+        'mostanában a szép dús haj olyan ritka',
+        'internet, könyv, mozi, zene, játék, gasztronómia, fotózás, bicaj, lájf, kockulás, sorozat, webfejlesztés, programozás és miegymás',
+        'megszentségteleníthetetlenségeskedéseitekért',
+        'elkáposztástalaníthatatlanságoskodásaitokért',
+        'szuggesztív szófia',
+        'fasírt, fasírt... ki a fasírt?',
+        'a molyok a szekrényben az eddablúzt dudorásszák'
+    ]) }}
+{% endblock %}
+
+{% block body %}
+    <section class="posts" id="bejegyzesek">
+        {% for post in posts %}
+            {{ include('MefiBlogBundle:Post:content.html.twig', { 'post': post }) }}
+        {% endfor %}
+    </section>
+{% endblock %}

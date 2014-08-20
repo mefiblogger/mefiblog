@@ -1,0 +1,20 @@
+{% extends 'MefiBlogBundle:Default:base.html.twig' %}
+
+{% block title %}Ezekben a témákban íródik a mefiblog{% endblock %}
+
+{% block body %}
+    <section class="timeline">
+
+        {% for category in categories %}
+            <article class="{{ cycle(['left', 'right'], loop.index0) }}">
+                <h2>{{ category.0.title }}</h2>
+                <p>Ebben a témában összesen {{ category.post_count }} bejegyzést olvashatsz.</p>
+                <p>
+                    <a href="{{ path('mefi_blog_category_slug', {'categoryId' : category.0.id, 'slug': category.0.slug}) }}">
+                        ide vele &raquo;
+                    </a>
+                </p>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

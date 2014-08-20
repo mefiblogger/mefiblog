@@ -1,0 +1,24 @@
+<article class="post">
+    <h2>
+        <a href="{{ path('mefi_blog_post_slug', {'id' : post.id, 'slug': post.slug}) }}">
+            {{  post.title }}
+        </a>
+    </h2>
+    <nav>
+        ez a
+        <a href="{{ path('mefi_blog_category_slug', {'categoryId' : post.category.id, 'slug': post.category.slug}) }}">
+            {{ post.category.title }}
+        </a>
+        témájú bejegyzés
+        <a href="{{ path('mefi_blog_archive', {'date' : post.createdAt|date('Ym'), 'trailingSlash' : "/" }) }}">
+            {{ post.createdAt | hundate }}
+        </a>
+        kelt és
+        <a href="{{ path('mefi_blog_post_slug', {'id' : post.id, 'slug': post.slug}) }}#kommentek" data-disqus-identifier="{{ post.id }}">
+            elsőként szólhatsz hozzá
+        </a>
+    </nav>
+    {{ post.lead|raw }}
+    {{ post.description|raw }}
+</article>
+<hr />

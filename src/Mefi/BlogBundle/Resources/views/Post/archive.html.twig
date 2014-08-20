@@ -1,0 +1,8 @@
+{% extends 'MefiBlogBundle:Post:collection.html.twig' %}
+
+{% block title %}Az összes {{ posts[0].createdAt|hundate_collection }} havi bejegyzés a mefiblogon{% endblock %}
+
+{% block headline %}
+    <h4>A {{ posts[0].createdAt|hundate_collection }} havi bejegyzésekhez jó szórakozást kíván Marty McFly!</h4>
+    <hr />
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'MefiBlogBundle:Post:collection.html.twig' %}
+
+{% block title %}Az összes {{ category.title }} témájú bejegyzés a mefiblogon{% endblock %}
+
+{% block headline %}
+    <h4>Most éppen {{ category.title|hunarticle }} {{ category.title }} témájú bejegyzéseket böngészed, jó szórakozást!</h4>
+    <hr />
+{% endblock %}

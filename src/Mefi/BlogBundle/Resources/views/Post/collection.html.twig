@@ -1,0 +1,11 @@
+{% extends 'MefiBlogBundle:Default:base.html.twig' %}
+
+{% block body %}
+    <section class="posts" id="bejegyzesek">
+        {% block headline %}{% endblock %}
+
+        {% for post in posts %}
+            {{ include('MefiBlogBundle:Post:content.html.twig', { 'post': post }) }}
+        {% endfor %}
+    </section>
+{% endblock %}
