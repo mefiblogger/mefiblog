@@ -162,7 +162,7 @@ header {
 }
 
 header div {
-    background-color: #363636;
+    background-color: transparent;
     background-repeat: no-repeat;
     background-position: center center;
     -webkit-background-size: cover;
