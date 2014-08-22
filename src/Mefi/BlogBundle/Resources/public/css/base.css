@@ -149,7 +149,9 @@ q:after {
 }
 
 header {
-    background: #525252 url(/bundles/mefiblog/images/header_1.png) no-repeat center center;
+    background-color: #525252;
+    background-repeat: no-repeat;
+    background-position: center center;
     border-bottom: 5px solid #f0f0f0;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -163,6 +165,26 @@ header {
     padding: 0;
     top: 0;
     width: 100%;
+}
+
+header.header-1 {
+    background-image: url(/bundles/mefiblog/images/header_1.png);
+}
+
+header.header-2 {
+    background-image: url(/bundles/mefiblog/images/header_2.png);
+}
+
+header.header-3 {
+    background-image: url(/bundles/mefiblog/images/header_3.png);
+}
+
+header.header-4 {
+    background-image: url(/bundles/mefiblog/images/header_4.png);
+}
+
+header.header-5 {
+    background-image: url(/bundles/mefiblog/images/header_5.png);
 }
 
 header.smaller {
