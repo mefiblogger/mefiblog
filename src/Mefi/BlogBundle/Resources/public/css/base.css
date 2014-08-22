@@ -149,14 +149,8 @@ q:after {
 }
 
 header {
-    background-color: #525252;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: #363636 url(/bundles/mefiblog/images/header_empty.gif) repeat center;
     border-bottom: 5px solid #f0f0f0;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     -webkit-box-shadow: 0px -2px 21px 4px rgba(176,176,176,0.55);
     -moz-box-shadow: 0px -2px 21px 4px rgba(176,176,176,0.55);
     box-shadow: 0px -2px 21px 4px rgba(176,176,176,0.55);
@@ -167,23 +161,35 @@ header {
     width: 100%;
 }
 
-header.header-1 {
+header div {
+    background-color: #363636;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+header div.header-1 {
     background-image: url(/bundles/mefiblog/images/header_1.png);
 }
 
-header.header-2 {
+header div.header-2 {
     background-image: url(/bundles/mefiblog/images/header_2.png);
 }
 
-header.header-3 {
+header div.header-3 {
     background-image: url(/bundles/mefiblog/images/header_3.png);
 }
 
-header.header-4 {
+header div.header-4 {
     background-image: url(/bundles/mefiblog/images/header_4.png);
 }
 
-header.header-5 {
+header div.header-5 {
     background-image: url(/bundles/mefiblog/images/header_5.png);
 }
 
