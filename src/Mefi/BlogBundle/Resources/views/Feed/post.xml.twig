@@ -1,0 +1,12 @@
+{% extends 'MefiBlogBundle:Feed:rss.xml.twig' %}
+{% block items %}
+    {% for post in posts %}
+
+            <item>
+                <title>{{ post.title }}</title>
+                <link>{{ url('mefi_blog_post_slug', {'id' : post.id, 'slug': post.slug}) }}</link>
+                <guid isPermaLink="true">{{ url('mefi_blog_post_slug', {'id' : post.id, 'slug': post.slug}) }}</guid>
+                <description><![CDATA[{{ post.lead|raw }}{{ post.description|raw }}]]></description>
+            </item>
+    {% endfor %}
+{% endblock %}

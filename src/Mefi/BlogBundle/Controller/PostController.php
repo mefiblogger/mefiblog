@@ -132,4 +132,16 @@ class PostController extends Controller
 
         throw $this->createNotFoundException('A megadott időben nem voltak bejegyzések.');
     }
+
+    /**
+     * Listing the newest post in RSS format.
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function feedAction()
+    {
+        $posts = $this->getRepository()->findAllVisibleAndPublshed();
+
+        return $this->render('MefiBlogBundle:Feed:post.xml.twig', array('posts' => $posts));
+    }
 }

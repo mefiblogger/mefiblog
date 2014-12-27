@@ -36,3 +36,9 @@ mefi_blog_post_id:
     requirements:
       id: \d+
       trailingSlash: ".*"
+
+mefi_blog_feed:
+    path:     /rss{trailingSlash}
+    defaults: { _controller: MefiBlogBundle:Post:feed}
+    requirements:
+      trailingSlash: ".*"
