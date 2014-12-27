@@ -12,8 +12,8 @@ Mefi\BlogBundle\Entity\Post:
     is_open      : { type: boolean }
     created_by   : { type: string(64) }
     title        : { type: string(255), notnull: true }
-    lead         : { type: string, notnull: true }
-    description  : { type: string }
+    lead         : { type: text, notnull: true }
+    description  : { type: text }
     published_at : { type: datetime }
     created_at   : { type: datetime }
     updated_at   : { type: datetime }
