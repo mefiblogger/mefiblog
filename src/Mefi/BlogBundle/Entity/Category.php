@@ -20,6 +20,8 @@ class Category
     private $title;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Post")
+     *
      * @var \Doctrine\Common\Collections\Collection
      */
     private $posts;
@@ -35,7 +37,7 @@ class Category
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -58,7 +60,7 @@ class Category
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -91,7 +93,7 @@ class Category
     /**
      * Get posts
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPosts()
     {
@@ -119,10 +121,20 @@ class Category
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Returns the category's title
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->title;
     }
 }

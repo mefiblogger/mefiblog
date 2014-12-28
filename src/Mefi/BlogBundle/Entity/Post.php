@@ -45,6 +45,8 @@ class Post
     private $description;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="Post")
+     *
      * @var \Mefi\BlogBundle\Entity\Category
      */
     private $category;
@@ -53,7 +55,7 @@ class Post
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -76,7 +78,7 @@ class Post
     /**
      * Get category_id
      *
-     * @return integer 
+     * @return integer
      */
     public function getCategoryId()
     {
@@ -99,7 +101,7 @@ class Post
     /**
      * Get is_visible
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getIsVisible()
     {
@@ -122,7 +124,7 @@ class Post
     /**
      * Get created_by
      *
-     * @return string 
+     * @return string
      */
     public function getCreatedBy()
     {
@@ -145,7 +147,7 @@ class Post
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -168,7 +170,7 @@ class Post
     /**
      * Get lead
      *
-     * @return string 
+     * @return string
      */
     public function getLead()
     {
@@ -191,7 +193,7 @@ class Post
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -214,7 +216,7 @@ class Post
     /**
      * Get category
      *
-     * @return \Mefi\BlogBundle\Entity\Category 
+     * @return \Mefi\BlogBundle\Entity\Category
      */
     public function getCategory()
     {
@@ -267,7 +269,7 @@ class Post
     /**
      * Get created_at
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -290,7 +292,7 @@ class Post
     /**
      * Get updated_at
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -313,7 +315,7 @@ class Post
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -341,7 +343,7 @@ class Post
     /**
      * Get visible_at
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getVisibleAt()
     {
@@ -369,7 +371,7 @@ class Post
     /**
      * Get is_open
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getIsOpen()
     {
@@ -397,7 +399,7 @@ class Post
     /**
      * Get published_at
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getPublishedAt()
     {
