@@ -42,3 +42,12 @@ mefi_blog_feed:
     defaults: { _controller: MefiBlogBundle:Post:feed}
     requirements:
       trailingSlash: ".*"
+
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /vezir
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /vezir
