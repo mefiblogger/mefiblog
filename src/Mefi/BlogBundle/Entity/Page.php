@@ -34,11 +34,15 @@ class Page
      */
     private $description;
 
+    /**
+     * @var string
+     */
+    private $slug;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -61,7 +65,7 @@ class Page
     /**
      * Get is_visible
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getIsVisible()
     {
@@ -84,7 +88,7 @@ class Page
     /**
      * Get created_by
      *
-     * @return string 
+     * @return string
      */
     public function getCreatedBy()
     {
@@ -107,7 +111,7 @@ class Page
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -130,12 +134,36 @@ class Page
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
         return $this->description;
     }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Post
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
     /**
      * @ORM\PrePersist
      */
@@ -150,5 +178,10 @@ class Page
     public function setUpdatedAtValue()
     {
         // Add your code here
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 }

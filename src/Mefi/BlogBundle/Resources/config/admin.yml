@@ -2,10 +2,20 @@ services:
     sonata.admin.post:
         class: Mefi\BlogBundle\Admin\PostAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Tartalom", label: "Bejegyzés", label_translator_strategy: sonata.admin.label.strategy.underscore }
+            - { name: sonata.admin, manager_type: orm, group: "Tartalom", label: "Bejegyzések", label_translator_strategy: sonata.admin.label.strategy.underscore }
         arguments:
             - ~
             - Mefi\BlogBundle\Entity\Post
+            - ~
+        calls:
+            - [setTranslationDomain, [SonataAdminBundle]]
+    sonata.admin.page:
+        class: Mefi\BlogBundle\Admin\PageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Tartalom", label: "Oldalak", label_translator_strategy: sonata.admin.label.strategy.underscore }
+        arguments:
+            - ~
+            - Mefi\BlogBundle\Entity\Page
             - ~
         calls:
             - [setTranslationDomain, [SonataAdminBundle]]

@@ -68,15 +68,33 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-# Sonata admin bundle
+# FOSUserBundle
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: Mefi\BlogBundle\Entity\User
+
+# Sonata block
 sonata_block:
     default_contexts: [cms]
     blocks:
         sonata.admin.block.admin_list:
-            contexts:   [admin]
+            contexts: [admin]
+        sonata.admin.block.search_result:
+            contexts: [admin]
 
+# Sonata admin bundle
 sonata_admin:
     title:      vezírközpont
     title_logo: bundles/mefiblog/images/vezir_logo.png
     options:
         pager_links: 5
+    security:
+        handler: sonata.admin.security.handler.role
+        information:
+            GUEST:    []
+            STAFF:    []
+            EDITOR:   []
+            ADMIN:    [MASTER]
+        admin_permissions: [CREATE, LIST, DELETE, UNDELETE, EXPORT, OPERATOR, MASTER]
+        object_permissions: [VIEW, EDIT, DELETE, UNDELETE, OPERATOR, MASTER, OWNER]

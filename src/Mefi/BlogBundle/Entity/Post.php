@@ -405,4 +405,9 @@ class Post
     {
         return $this->published_at;
     }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
 }

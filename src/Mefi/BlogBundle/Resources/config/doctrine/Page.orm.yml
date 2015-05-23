@@ -13,7 +13,8 @@ Mefi\BlogBundle\Entity\Page:
     is_visible   : { type: boolean }
     created_by   : { type: string(64) }
     title        : { type: string(255), notnull: true }
-    description  : { type: string(4000) }
+    description  : { type: text }
+    slug         : { type: string(255), notnull: true }
   lifecycleCallbacks:
     prePersist: [ setCreatedAtValue ]
     preUpdate: [ setUpdatedAtValue ]

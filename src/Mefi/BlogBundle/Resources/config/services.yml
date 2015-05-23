@@ -1,5 +1,5 @@
 parameters:
-#    mefi_blog.example.class: Mefi\BlogBundle\Example
+    security.acl.permission.map.class: Sonata\AdminBundle\Security\Acl\Permission\AdminPermissionMap
 
 services:
     mefi.twig.mefi_extension:

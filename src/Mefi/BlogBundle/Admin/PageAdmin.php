@@ -9,19 +9,12 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
- * Class PostAdmin
+ * Class PageAdmin
  *
  * @package Mefi\BlogBundle\Admin
  */
-class PostAdmin extends Admin
+class PageAdmin extends Admin
 {
-    /**
-     * @var array
-     */
-    protected $datagridValues = array(
-        '_sort_order' => 'DESC',
-    );
-
     /**
      * Configures created and edit form fields.
      *
@@ -32,18 +25,14 @@ class PostAdmin extends Admin
         $formMapper
             ->with('Legfontosabb')
                 ->add('title', 'text', array('label' => 'Cím'))
-                ->add('category', null, array('label' => 'Téma', 'required' => true))
-                ->add('lead', 'textarea', array('label' => 'Előszó', 'attr' => array('rows' => 15)))
                 ->add('description', 'textarea', array('label' => 'Tartalom'))
             ->end()
             ->with('Aknakereső')
                 ->add('is_visible', 'checkbox', array('label' => 'Publikus?'))
-                ->add('is_open', 'checkbox', array('label' => 'Kommentálható?'))
             ->end()
             ->with('Extrák')
                 ->add('created_by', 'text', array('label' => 'Szerző', 'data' => 'Mefi'))
-                ->add('published_at', 'datetime', array('label' => 'Megjelenés ideje', 'data' => new \DateTime()))
-                ->add('slug', 'text', array('label' => 'Slug (barátságos URL)'))
+                ->add('slug', 'text', array('label' => 'Slug (barátságos URL)', 'required' => false))
             ->end()
         ;
     }
@@ -57,11 +46,7 @@ class PostAdmin extends Admin
     {
         $datagridMapper
             ->add('title')
-            ->add('category')
-            ->add('published_at')
             ->add('is_visible')
-            ->add('is_open')
-            ->add('lead')
             ->add('description')
             ->add('created_by')
         ;
@@ -77,10 +62,9 @@ class PostAdmin extends Admin
         $listMapper
             ->addIdentifier('id', 'int', array('label' => 'ID'))
             ->addIdentifier('title', 'string', array('label' => 'Cím'))
-            ->add('category', null, array('label' => 'Téma'))
-            ->add('published_at', 'datetime', array('label' => 'Megjelenik'))
+            ->add('slug', 'string', array('label' => 'Slug'))
+            ->add('created_by', 'string', array('label' => 'Szerző'))
             ->add('is_visible', 'boolean', array('label' => 'Publikus'))
-            ->add('is_open', 'boolean', array('label' => 'Kommentálható'))
         ;
     }
 }
